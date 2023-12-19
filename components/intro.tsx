@@ -2,6 +2,10 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import { FaGithubSquare } from "react-icons/fa";
 
 export default function Intro() {
   return (
@@ -35,7 +39,7 @@ export default function Intro() {
               type: "spring",
               stiffness: 125,
               delay: 0.1,
-              duration: 0.7
+              duration: 0.7,
             }}
           >
             👋
@@ -43,10 +47,58 @@ export default function Intro() {
         </div>
       </div>
 
-      <p className="mb-10 mt-4 px-4 text-xl sm:text-2xl font-medium !leading-[1.5]">
-        <span className="font-bold">Hi, I'm Annisa, </span>
-         a <span className="font-bold">web developer and designer</span> who love using code to merge design and technology, creating aesthetically pleasing and functional outcomes.
-      </p>
+      <motion.h1
+        className="mb-10 mt-4 px-4 text-xl sm:text-2xl font-medium !leading-[1.5]"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <span className="font-bold">Hi, I'm Annisa, </span>a{" "}
+        <span className="font-bold">web developer and designer</span> who love
+        using code to merge design and technology, creating aesthetically
+        pleasing and functional outcomes.
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.1,
+        }}
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 font-medium text-md"
+      >
+        <Link
+          href="#contact"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+        >
+          Contact me here{" "}
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </Link>
+
+        <a
+          href="/CV.pdf"
+          download
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+        >
+          Download CV{" "}
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+        </a>
+
+        <a
+          href="https://linkedin.com/in/annisa-rachma"
+          target="_blank"
+          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+        >
+          <BsLinkedin />
+        </a>
+
+        <a
+          href="https://github.com/annisa-rachma"
+          target="_blank"
+          className="bg-white text-gray-700 p-4 flex items-center gap-2 text-[1.25rem] rounded-full focus:scale-110 hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+        >
+          <FaGithubSquare />
+        </a>
+      </motion.div>
     </section>
   );
 }
