@@ -47,7 +47,7 @@ export default function Intro() {
         </div>
       </div>
 
-      <motion.p
+      <motion.h1
         className="mb-10 mt-4 px-4 text-xl sm:text-2xl font-medium !leading-[1.5]"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function Intro() {
         <span className="font-bold">web developer and designer</span> who love
         using code to merge design and technology, creating aesthetically
         pleasing and functional outcomes.
-      </motion.p>
+      </motion.h1>
 
       <motion.div
         initial={{ opacity: 0, y: 100 }}
