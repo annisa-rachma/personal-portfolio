@@ -62,33 +62,39 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay:0.1 
+          delay: 0.1,
         }}
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 font-medium text-md"
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 font-medium text-md"
       >
         <Link
           href="#contact"
-          className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
-          Contact me here <BsArrowRight />
+          Contact me here{" "}
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
+
         <a
-          href=""
-          className="bg-white px-7 py-3 flex items-center gap-2 rounded-full"
+          href="/CV.pdf"
+          download
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
         >
-          Download CV <HiDownload />
+          Download CV{" "}
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
+
         <a
           href="https://linkedin.com/in/annisa-rachma"
           target="_blank"
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full"
+          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
         >
           <BsLinkedin />
         </a>
+
         <a
           href="https://github.com/annisa-rachma"
           target="_blank"
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 text-[1.25rem] rounded-full"
+          className="bg-white text-gray-700 p-4 flex items-center gap-2 text-[1.25rem] rounded-full focus:scale-110 hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
         >
           <FaGithubSquare />
         </a>
